@@ -66,3 +66,159 @@
 2025-02-16 21:30:52.7196 ERROR Ошибка во время работы System.IO.FileNotFoundException: Шаблон .xlsx не найден
    в ExcelRangeToImgForPrint.ImgFilePrint.CreateModifiedExcelCopy() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 117
    в ExcelRangeToImgForPrint.ImgFilePrint.ProcessFile() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 89
+2025-02-16 22:49:30.3806 ERROR Ошибка инициалиации System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: String
+   в System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   в System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   в System.Int32.Parse(String s)
+   в ExcelRangeToImgForPrint.ImgFilePrint..ctor(Int32 number, Double heat, String numberLabel) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 62
+2025-02-16 22:49:30.4645 ERROR Ошибка во время работы System.IO.FileNotFoundException: Шаблон .xlsx не найден
+   в ExcelRangeToImgForPrint.ImgFilePrint.CreateModifiedExcelCopy() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 117
+   в ExcelRangeToImgForPrint.ImgFilePrint.ProcessFile() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 89
+2025-02-16 22:50:16.6313 ERROR Ошибка инициалиации System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: String
+   в System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   в System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   в System.Int32.Parse(String s)
+   в ExcelRangeToImgForPrint.ImgFilePrint..ctor(Int32 number, Double heat, String numberLabel) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 62
+2025-02-16 22:50:16.6655 ERROR Ошибка во время работы System.IO.FileNotFoundException: Шаблон .xlsx не найден
+   в ExcelRangeToImgForPrint.ImgFilePrint.CreateModifiedExcelCopy() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 117
+   в ExcelRangeToImgForPrint.ImgFilePrint.ProcessFile() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 89
+2025-02-16 22:50:36.8079 ERROR Ошибка инициалиации System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: String
+   в System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   в System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   в System.Int32.Parse(String s)
+   в ExcelRangeToImgForPrint.ImgFilePrint..ctor(Int32 number, Double heat, String numberLabel) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 62
+2025-02-16 22:50:36.8347 ERROR Ошибка во время работы System.IO.FileNotFoundException: Шаблон .xlsx не найден
+   в ExcelRangeToImgForPrint.ImgFilePrint.CreateModifiedExcelCopy() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 117
+   в ExcelRangeToImgForPrint.ImgFilePrint.ProcessFile() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 89
+2025-02-16 22:51:23.5898 INFO Инициалиация шаблона № 1 
+2025-02-16 22:51:23.9485 ERROR Ошибка во время работы System.ArgumentException: No encoder available for format 0
+   в ZXing.MultiFormatWriter.encode(String contents, BarcodeFormat format, Int32 width, Int32 height, IDictionary`2 hints)
+   в ZXing.BarcodeWriterGeneric.Encode(String contents)
+   в ZXing.BarcodeWriter`1.Write(String contents)
+   в ExcelRangeToImgForPrint.ImgFilePrint.GenerateBarcodeBitmap(String data) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 199
+   в ExcelRangeToImgForPrint.ImgFilePrint.InsertBarcode(ExcelWorksheet worksheet, ExcelRangeBase cell) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 160
+   в ExcelRangeToImgForPrint.ImgFilePrint.UpdateWorksheetPlaceholders(ExcelWorksheet worksheet) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 151
+   в ExcelRangeToImgForPrint.ImgFilePrint.CreateModifiedExcelCopy() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 127
+   в ExcelRangeToImgForPrint.ImgFilePrint.ProcessFile() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 89
+2025-02-16 22:52:21.3112 ERROR Ошибка инициалиации System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: String
+   в System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   в System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   в System.Int32.Parse(String s)
+   в ExcelRangeToImgForPrint.ImgFilePrint..ctor(Int32 number, Double heat, String numberLabel) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 62
+2025-02-16 22:52:21.3444 ERROR Ошибка во время работы System.IO.FileNotFoundException: Шаблон .xlsx не найден
+   в ExcelRangeToImgForPrint.ImgFilePrint.CreateModifiedExcelCopy() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 117
+   в ExcelRangeToImgForPrint.ImgFilePrint.ProcessFile() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 89
+2025-02-16 22:52:31.7427 ERROR Ошибка инициалиации System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: String
+   в System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   в System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   в System.Int32.Parse(String s)
+   в ExcelRangeToImgForPrint.ImgFilePrint..ctor(Int32 number, Double heat, String numberLabel) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 62
+2025-02-16 22:52:31.7805 ERROR Ошибка во время работы System.IO.FileNotFoundException: Шаблон .xlsx не найден
+   в ExcelRangeToImgForPrint.ImgFilePrint.CreateModifiedExcelCopy() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 117
+   в ExcelRangeToImgForPrint.ImgFilePrint.ProcessFile() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 89
+2025-02-16 22:52:40.7584 ERROR Ошибка инициалиации System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: String
+   в System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   в System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   в System.Int32.Parse(String s)
+   в ExcelRangeToImgForPrint.ImgFilePrint..ctor(Int32 number, Double heat, String numberLabel) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 62
+2025-02-16 22:52:40.7961 ERROR Ошибка во время работы System.IO.FileNotFoundException: Шаблон .xlsx не найден
+   в ExcelRangeToImgForPrint.ImgFilePrint.CreateModifiedExcelCopy() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 117
+   в ExcelRangeToImgForPrint.ImgFilePrint.ProcessFile() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 89
+2025-02-16 22:52:51.4154 INFO Инициалиация шаблона № 1 
+2025-02-16 22:52:51.7519 ERROR Ошибка во время работы System.ArgumentException: No encoder available for format 0
+   в ZXing.MultiFormatWriter.encode(String contents, BarcodeFormat format, Int32 width, Int32 height, IDictionary`2 hints)
+   в ZXing.BarcodeWriterGeneric.Encode(String contents)
+   в ZXing.BarcodeWriter`1.Write(String contents)
+   в ExcelRangeToImgForPrint.ImgFilePrint.GenerateBarcodeBitmap(String data) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 199
+   в ExcelRangeToImgForPrint.ImgFilePrint.InsertBarcode(ExcelWorksheet worksheet, ExcelRangeBase cell) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 160
+   в ExcelRangeToImgForPrint.ImgFilePrint.UpdateWorksheetPlaceholders(ExcelWorksheet worksheet) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 151
+   в ExcelRangeToImgForPrint.ImgFilePrint.CreateModifiedExcelCopy() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 127
+   в ExcelRangeToImgForPrint.ImgFilePrint.ProcessFile() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 89
+2025-02-16 22:52:58.1578 ERROR Ошибка инициалиации System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: String
+   в System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   в System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   в System.Int32.Parse(String s)
+   в ExcelRangeToImgForPrint.ImgFilePrint..ctor(Int32 number, Double heat, String numberLabel) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 62
+2025-02-16 22:52:58.1963 ERROR Ошибка во время работы System.IO.FileNotFoundException: Шаблон .xlsx не найден
+   в ExcelRangeToImgForPrint.ImgFilePrint.CreateModifiedExcelCopy() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 117
+   в ExcelRangeToImgForPrint.ImgFilePrint.ProcessFile() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 89
+2025-02-16 22:53:24.3522 INFO Инициалиация шаблона № 1 
+2025-02-16 22:53:24.7351 ERROR Ошибка во время работы System.ArgumentException: No encoder available for format 0
+   в ZXing.MultiFormatWriter.encode(String contents, BarcodeFormat format, Int32 width, Int32 height, IDictionary`2 hints)
+   в ZXing.BarcodeWriterGeneric.Encode(String contents)
+   в ZXing.BarcodeWriter`1.Write(String contents)
+   в ExcelRangeToImgForPrint.ImgFilePrint.GenerateBarcodeBitmap(String data) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 199
+   в ExcelRangeToImgForPrint.ImgFilePrint.InsertBarcode(ExcelWorksheet worksheet, ExcelRangeBase cell) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 160
+   в ExcelRangeToImgForPrint.ImgFilePrint.UpdateWorksheetPlaceholders(ExcelWorksheet worksheet) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 151
+   в ExcelRangeToImgForPrint.ImgFilePrint.CreateModifiedExcelCopy() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 127
+   в ExcelRangeToImgForPrint.ImgFilePrint.ProcessFile() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 89
+2025-02-16 22:53:34.5868 ERROR Ошибка инициалиации System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: String
+   в System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   в System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   в System.Int32.Parse(String s)
+   в ExcelRangeToImgForPrint.ImgFilePrint..ctor(Int32 number, Double heat, String numberLabel) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 62
+2025-02-16 22:53:34.6268 ERROR Ошибка во время работы System.IO.FileNotFoundException: Шаблон .xlsx не найден
+   в ExcelRangeToImgForPrint.ImgFilePrint.CreateModifiedExcelCopy() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 117
+   в ExcelRangeToImgForPrint.ImgFilePrint.ProcessFile() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 89
+2025-02-16 22:55:01.5903 ERROR Ошибка инициалиации System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: String
+   в System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   в System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   в System.Int32.Parse(String s)
+   в ExcelRangeToImgForPrint.ImgFilePrint..ctor(Int32 number, Double heat, String numberLabel) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 62
+2025-02-16 22:55:01.6670 ERROR Ошибка во время работы System.IO.FileNotFoundException: Шаблон .xlsx не найден
+   в ExcelRangeToImgForPrint.ImgFilePrint.CreateModifiedExcelCopy() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 117
+   в ExcelRangeToImgForPrint.ImgFilePrint.ProcessFile() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 89
+2025-02-16 22:56:23.1956 INFO Инициалиация шаблона № 1 
+2025-02-16 22:56:28.7216 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 22:56:37.0048 INFO Инициалиация шаблона № 1 
+2025-02-16 22:56:38.2736 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 23:05:18.2950 INFO Инициалиация шаблона № 1 
+2025-02-16 23:05:19.6678 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 23:06:14.3474 INFO Инициалиация шаблона № 1 
+2025-02-16 23:06:15.7480 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 23:06:49.1448 INFO Инициалиация шаблона № 1 
+2025-02-16 23:06:50.4775 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 23:07:09.2195 INFO Инициалиация шаблона № 1 
+2025-02-16 23:07:10.8828 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 23:07:47.9338 INFO Инициалиация шаблона № 1 
+2025-02-16 23:07:49.4264 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 23:08:09.2616 INFO Инициалиация шаблона № 1 
+2025-02-16 23:08:10.5544 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 23:08:28.8620 INFO Инициалиация шаблона № 1 
+2025-02-16 23:08:30.2527 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 23:09:02.2786 INFO Инициалиация шаблона № 1 
+2025-02-16 23:09:03.5115 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 23:09:24.6656 INFO Инициалиация шаблона № 1 
+2025-02-16 23:09:25.9396 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 23:17:13.6682 INFO Инициалиация шаблона № 1 
+2025-02-16 23:17:14.9539 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 23:20:11.1700 INFO Инициалиация шаблона № 1 
+2025-02-16 23:20:12.4535 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 23:20:37.2876 INFO Инициалиация шаблона № 1 
+2025-02-16 23:20:38.5890 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 23:22:57.4499 INFO Инициалиация шаблона № 1 
+2025-02-16 23:22:58.7889 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 

@@ -157,28 +157,9 @@ namespace ExcelRangeToImgForPrint
         private void InsertBarcode(ExcelWorksheet worksheet, ExcelRangeBase cell)
         {
             var barcodeValue = $"{Number}-{Heat}";
-            var bitmap = GenerateBarcodeBitmap(barcodeValue);
-
-            try
+            using (var bitmap = GenerateVerticalBarcodeBitmap(barcodeValue))
             {
-                var tempImagePath = Path.Combine(_tempFolder, $"{Guid.NewGuid()}.png");
-                bitmap.Save(tempImagePath, ImageFormat.Png);
-                _tempFiles.Add(tempImagePath);
-
-                var picture = worksheet.Drawings.AddPicture(
-                    Guid.NewGuid().ToString(),
-                    new FileInfo(tempImagePath)
-                );
-
-                // Явное преобразование типов для EPPlus 4.x
-                picture.From.Column = cell.Start.Column - 1;
-                picture.From.Row = cell.Start.Row - 1;
-                picture.SetSize(_barcodeWidth, _barcodeHeight);
-                cell.Value = string.Empty;
-            }
-            finally
-            {
-                bitmap.Dispose();
+                InsertBarcodeImage(worksheet, cell, bitmap);
             }
         }
 
@@ -191,12 +172,69 @@ namespace ExcelRangeToImgForPrint
                 {
                     Width = _barcodeWidth,
                     Height = _barcodeHeight,
-                    Margin = 0,
+                    Margin = 2,
                     PureBarcode = true
                 }
             };
 
             return writer.Write(data);
+        }
+
+        private Bitmap GenerateVerticalBarcodeBitmap(string data)
+        {
+            Bitmap horizontalBmp = null;
+            try
+            {
+                horizontalBmp = GenerateBarcodeBitmap(data);
+                var verticalBmp = new Bitmap(horizontalBmp.Height, horizontalBmp.Width);
+
+                using (var g = Graphics.FromImage(verticalBmp))
+                {
+                    g.TranslateTransform(verticalBmp.Width / 2, verticalBmp.Height / 2);
+                    g.RotateTransform(90);
+                    g.TranslateTransform(-horizontalBmp.Width / 2, -horizontalBmp.Height / 2);
+                    g.DrawImage(horizontalBmp, new Point(0, 0));
+                }
+
+                horizontalBmp.Dispose();
+                return verticalBmp;
+            }
+            finally
+            {
+                if (horizontalBmp != null)
+                    horizontalBmp.Dispose();
+            }
+        }
+
+        private void InsertBarcodeImage(ExcelWorksheet worksheet, ExcelRangeBase cell, Bitmap bitmap)
+        {
+            string tempImagePath = null;
+            try
+            {
+                tempImagePath = Path.Combine(_tempFolder, $"{Guid.NewGuid()}.png");
+                bitmap.Save(tempImagePath, ImageFormat.Png);
+                _tempFiles.Add(tempImagePath);
+
+                var picture = worksheet.Drawings.AddPicture(
+                    Guid.NewGuid().ToString(),
+                    new FileInfo(tempImagePath)
+                );
+
+                picture.From.Column = cell.Start.Column - 1;
+                picture.From.Row = cell.Start.Row - 1;
+                picture.From.ColumnOff = 0;
+                picture.From.RowOff = 0;
+                picture.SetSize(bitmap.Width, bitmap.Height);
+                cell.Value = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                if (tempImagePath != null && File.Exists(tempImagePath))
+                    File.Delete(tempImagePath);
+
+                Logger.Error(ex, "Ошибка вставки штрихкода");
+                throw;
+            }
         }
 
 

@@ -9,5 +9,16 @@
             "SheetIndex": 0,
             "CellRange": "B1:N73"
         }
+    },
+    "Barcode": {
+        "Width": 720,
+        "Height": 100,
+        "Format": "CODE_128",
+        "Margin": 0,
+        "ShowText": true,
+        "TextFont": {
+        "Name": "Arial",
+        "Size": "12"
+    }
     }
 }
