@@ -28,3 +28,41 @@
 2025-02-16 17:06:39.6616 INFO Преобразованно успешно. Сохранено в : tempExcel\218cfaa2-d482-428d-9af4-0dd2289b5ffd_converted.xlsx 
 2025-02-16 17:06:40.3041 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
  
+2025-02-16 20:45:19.3262 INFO Инициалиация шаблона № 1 
+2025-02-16 20:45:19.7331 ERROR Ошибка во время работы OfficeOpenXml.LicenseException: Please set the ExcelPackage.LicenseContext property. See https://epplussoftware.com/developers/licenseexception
+   в OfficeOpenXml.ExcelPackage.get_Workbook()
+   в ExcelRangeToImgForPrint.ImgFilePrint.CreateModifiedExcelCopy() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 114
+   в ExcelRangeToImgForPrint.ImgFilePrint.ProcessFile() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 78
+2025-02-16 20:46:00.1337 INFO Инициалиация шаблона № 1 
+2025-02-16 20:46:05.4666 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 20:47:06.0847 INFO Инициалиация шаблона № 1 
+2025-02-16 20:47:07.2944 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 20:47:07.2944 INFO Начало очистки временных файлов 
+2025-02-16 20:47:07.2944 DEBUG Удален файл: tempExcel\a5c84f67-8636-425e-87f1-cba8b248cb5e.xlsx 
+2025-02-16 20:47:07.2944 DEBUG Удален файл: tempImages\039e33ec-9ce8-4864-a427-fb7866f4892c.png 
+2025-02-16 21:29:53.9053 ERROR Ошибка инициалиации System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: String
+   в System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   в System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   в System.Int32.Parse(String s)
+   в ExcelRangeToImgForPrint.ImgFilePrint..ctor(Int32 number, Double heat, String numberLabel) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 62
+2025-02-16 21:30:09.0079 ERROR Ошибка инициалиации System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: String
+   в System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   в System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   в System.Int32.Parse(String s)
+   в ExcelRangeToImgForPrint.ImgFilePrint..ctor(Int32 number, Double heat, String numberLabel) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 62
+2025-02-16 21:30:09.0537 ERROR Ошибка во время работы System.IO.FileNotFoundException: Шаблон .xlsx не найден
+   в ExcelRangeToImgForPrint.ImgFilePrint.CreateModifiedExcelCopy() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 117
+   в ExcelRangeToImgForPrint.ImgFilePrint.ProcessFile() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 89
+2025-02-16 21:30:52.6760 ERROR Ошибка инициалиации System.ArgumentNullException: Значение не может быть неопределенным.
+Имя параметра: String
+   в System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   в System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   в System.Int32.Parse(String s)
+   в ExcelRangeToImgForPrint.ImgFilePrint..ctor(Int32 number, Double heat, String numberLabel) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 62
+2025-02-16 21:30:52.7196 ERROR Ошибка во время работы System.IO.FileNotFoundException: Шаблон .xlsx не найден
+   в ExcelRangeToImgForPrint.ImgFilePrint.CreateModifiedExcelCopy() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 117
+   в ExcelRangeToImgForPrint.ImgFilePrint.ProcessFile() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 89

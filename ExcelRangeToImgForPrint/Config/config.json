@@ -9,5 +9,11 @@
             "SheetIndex": 0,
             "CellRange": "B1:N73"
         }
+    },
+    "Barcode": {
+        "Width": 300,
+        "Height": 100,
+        "Format": "CODE_128",
+        "Margin": 0
     }
 }

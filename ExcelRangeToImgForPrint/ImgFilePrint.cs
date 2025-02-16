@@ -3,20 +3,25 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using NLog;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
+using ZXing;
+using ZXing.Common;
 using ConfigurationBuilder = Microsoft.Extensions.Configuration.ConfigurationBuilder;
 
 namespace ExcelRangeToImgForPrint
 {
-    public class ImgFilePrint : IDisposable
+    public class ImgFilePrint
     {
+
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
         private readonly List<string> _tempFiles = new List<string>();
 
@@ -32,10 +37,14 @@ namespace ExcelRangeToImgForPrint
         private readonly string _pythonScript;
         private readonly string _outputImageFolder;
         private readonly int _sheetIndex;
-        private readonly string _cellRange;
+        private readonly string _cellRange; 
+        private readonly int _barcodeWidth;
+        private readonly int _barcodeHeight;
+        private readonly BarcodeFormat _barcodeFormat;
 
         public ImgFilePrint(int number, double heat, string numberLabel)
         {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             try
             {
                 _config = new ConfigurationBuilder()
@@ -50,6 +59,9 @@ namespace ExcelRangeToImgForPrint
                 _pythonScript = _config["Python:ScriptPath"];
                 _outputImageFolder = _config["Python:OutputImageFolder"];
                 _sheetIndex = int.Parse(_config["Python:Parameters:SheetIndex"]);
+                _barcodeWidth = int.Parse(_config["Barcode:Width"]);
+                _barcodeHeight = int.Parse(_config["Barcode:Height"]); 
+                _barcodeFormat = (BarcodeFormat)Enum.Parse(typeof(BarcodeFormat), _config["Barcode:Format"]);
                 _cellRange = _config["Python:Parameters:CellRange"];
                 Number = number;
                 Heat = heat;
@@ -63,33 +75,27 @@ namespace ExcelRangeToImgForPrint
             catch (Exception ex)
             {
                 Logger.Error(ex, "Ошибка инициалиации");
-                throw;
             }
         }
 
         public string ProcessFile()
         {
             string tempExcelPath = null;
-            string convertedFilePath = null;
             string imagePath = null;
 
             try
             {
-                // 1. Поиск исходного файла
-                tempExcelPath = GetTemplateCopy();
+                // 1. Копирование и модификация файла
+                tempExcelPath = CreateModifiedExcelCopy();
 
-                // 2. Преобразование файла
-                convertedFilePath = ConvertExcelFile(tempExcelPath);
-
-                // 3. Генерация пути для изображения
+                // 2. Генерация уникального пути для изображения
                 imagePath = GenerateImagePath();
 
-                // 4. Вызов Python скрипта
-                RunPythonScript(convertedFilePath, imagePath);
+                // 3. Запуск Python скрипта
+                ExecutePythonConversion(tempExcelPath, imagePath);
 
-                // 5. Сохраняем пути для очистки
+                // 4. Сохранение путей для последующей очистки
                 _tempFiles.Add(tempExcelPath);
-                _tempFiles.Add(convertedFilePath);
                 _tempFiles.Add(imagePath);
 
                 return imagePath;
@@ -98,131 +104,101 @@ namespace ExcelRangeToImgForPrint
             {
                 Logger.Error(ex, "Ошибка во время работы");
 
-                // Удаление временных файлов при ошибке
-                CleanupFile(tempExcelPath);
-                CleanupFile(convertedFilePath);
-                CleanupFile(imagePath);
-
                 throw;
             }
         }
 
-        private string GetTemplateCopy()
+        
+
+        private string CreateModifiedExcelCopy()
         {
             var sourcePath = Path.Combine(_templatesFolder, $"{NumberLabel}.xlsx");
             if (!File.Exists(sourcePath))
-                throw new FileNotFoundException($"Шаблон не найден в директории: {sourcePath}");
+                throw new FileNotFoundException($"Шаблон {NumberLabel}.xlsx не найден");
 
-            var tempName = $"{Guid.NewGuid()}_{Path.GetFileName(sourcePath)}";
-            var destPath = Path.Combine(_tempFolder, tempName);
+            var tempPath = Path.Combine(_tempFolder, $"{Guid.NewGuid()}.xlsx");
+            File.Copy(sourcePath, tempPath);
 
-            File.Copy(sourcePath, destPath);
-            Logger.Debug($"Скопированно в : {destPath}");
-
-            return destPath;
-        }
-
-        private string ConvertExcelFile(string inputPath)
-        {
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            string outputPath = Path.Combine(_tempFolder, $"{Guid.NewGuid()}_converted.xlsx");
-
-            try
+            // Модификация Excel
+            using (var package = new ExcelPackage(new FileInfo(tempPath)))
             {
-                Logger.Info($"Начало преобразования файла: {inputPath}");
-
-                FileInfo fileInfo = new FileInfo(inputPath);
-                using (var package = new ExcelPackage(fileInfo))
+                foreach (var worksheet in package.Workbook.Worksheets)
                 {
-                    foreach (var worksheet in package.Workbook.Worksheets)
-                    {
-                        ProcessWorksheet(worksheet);
-                    }
-
-                    // Сохраняем измененный файл
-                    package.SaveAs(new FileInfo(outputPath));
+                    UpdateWorksheetPlaceholders(worksheet);
                 }
+                package.Save();
+            }
 
-                Logger.Info($"Преобразованно успешно. Сохранено в : {outputPath}");
-                return outputPath;
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex, "Ошибка во время преобразования");
-                CleanupFile(outputPath);
-                throw;
-            }
+            return tempPath;
         }
 
-        private void ProcessWorksheet(ExcelWorksheet worksheet)
+        private void UpdateWorksheetPlaceholders(ExcelWorksheet worksheet)
         {
-            try
+            
+            var cells = worksheet.Cells[worksheet.Dimension.Address];
+            foreach (var cell in cells)
             {
-                int rowCount = worksheet.Dimension?.Rows ?? 0;
-                int colCount = worksheet.Dimension?.Columns ?? 0;
-
-                for (int row = 1; row <= rowCount; row++)
+                if (cell.Value is string value)
                 {
-                    for (int col = 1; col <= colCount; col++)
+                    // Замена плейсхолдеров
+                    cell.Value = value
+                        .Replace("[плавка]", Heat.ToString())
+                        .Replace("[номер]", Number.ToString());
+
+                    // Специальное форматирование для штрихкода
+                    if (value.Contains("[шрихкод]"))
                     {
-                        var cell = worksheet.Cells[row, col];
-                        if (cell.Value == null) continue;
-
-                        string cellValue = cell.Text;
-                        if (string.IsNullOrEmpty(cellValue)) continue;
-
-                        // Сохраняем исходный стиль
-                        var originalStyle = cell.Style;
-
-                        // Замена плейсхолдеров
-                        if (cellValue.Contains("[плавка]"))
-                        {
-                            cell.Value = ReplacePlaceholder(
-                                cellValue: cellValue,
-                                placeholder: "[плавка]",
-                                replacement: Heat.ToString(),
-                                originalStyle: originalStyle);
-                        }
-
-                        if (cellValue.Contains("[номер]"))
-                        {
-                            cell.Value = ReplacePlaceholder(
-                                cellValue: cellValue,
-                                placeholder: "[номер]",
-                                replacement: Number.ToString(),
-                                originalStyle: originalStyle);
-                        }
+                        InsertBarcode(worksheet, cell);
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                Logger.Error(ex, $"Error processing worksheet {worksheet.Name}");
-                throw;
-            }
         }
 
-        private string ReplacePlaceholder(string cellValue, string placeholder, string replacement, ExcelStyle originalStyle)
+        private void InsertBarcode(ExcelWorksheet worksheet, ExcelRangeBase cell)
         {
+            var barcodeValue = $"{Number}-{Heat}";
+            var bitmap = GenerateBarcodeBitmap(barcodeValue);
+
             try
             {
-                // Сохраняем форматирование
-                var newValue = cellValue.Replace(placeholder, replacement);
+                var tempImagePath = Path.Combine(_tempFolder, $"{Guid.NewGuid()}.png");
+                bitmap.Save(tempImagePath, ImageFormat.Png);
+                _tempFiles.Add(tempImagePath);
 
-                // Восстанавливаем стиль после замены
-                //originalStyle.Fill.PatternType = ExcelFillStyle.Solid;
-                //originalStyle.Fill.BackgroundColor.SetColor(
-                //    Color.Black
-                //);
+                var picture = worksheet.Drawings.AddPicture(
+                    Guid.NewGuid().ToString(),
+                    new FileInfo(tempImagePath)
+                );
 
-                return newValue;
+                // Явное преобразование типов для EPPlus 4.x
+                picture.From.Column = cell.Start.Column - 1;
+                picture.From.Row = cell.Start.Row - 1;
+                picture.SetSize(_barcodeWidth, _barcodeHeight);
+                cell.Value = string.Empty;
             }
-            catch (Exception ex)
+            finally
             {
-                Logger.Error(ex, $"Ошибка замены {placeholder}");
-                throw;
+                bitmap.Dispose();
             }
         }
+
+        private Bitmap GenerateBarcodeBitmap(string data)
+        {
+            var writer = new BarcodeWriter
+            {
+                Format = _barcodeFormat,
+                Options = new EncodingOptions
+                {
+                    Width = _barcodeWidth,
+                    Height = _barcodeHeight,
+                    Margin = 0,
+                    PureBarcode = true
+                }
+            };
+
+            return writer.Write(data);
+        }
+
 
         private string GenerateImagePath()
         {
@@ -230,7 +206,7 @@ namespace ExcelRangeToImgForPrint
             return Path.Combine(_outputImageFolder, $"{Guid.NewGuid()}.png");
         }
 
-        private void RunPythonScript(string excelPath, string imagePath)
+        private void ExecutePythonConversion(string excelPath, string imagePath)
         {
             var args = $"\"{_pythonScript}\" " +
                        $"\"{excelPath}\" " +
@@ -291,35 +267,28 @@ namespace ExcelRangeToImgForPrint
             Directory.CreateDirectory(_outputImageFolder);
         }
 
-        private void CleanupFile(string path)
+        public void Cleanup()
         {
-            try
+            Logger.Info("Начало очистки временных файлов");
+            foreach (var file in _tempFiles.ToArray())
             {
-                if (!string.IsNullOrEmpty(path) && File.Exists(path))
+                try
                 {
-                    File.Delete(path);
-                    Logger.Debug($"Удален файл из: {path}");
+                    if (File.Exists(file))
+                    {
+                        File.Delete(file);
+                        Logger.Debug($"Удален файл: {file}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Logger.Warn(ex, $"Ошибка удаления файла {file}");
                 }
             }
-            catch (Exception ex)
-            {
-                Logger.Warn(ex, $"Ошибка во время удаления: {path}");
-            }
+            _tempFiles.Clear();
         }
 
-        //public void Cleanup()
-        //{
-        //    foreach (var file in _tempFiles.ToArray())
-        //    {
-        //        CleanupFile(file);
-        //    }
-        //    _tempFiles.Clear();
-        //}
 
-        public void Dispose()
-        {
-            Console.WriteLine("dispose");
-        }
     }
 }
 

@@ -10,7 +10,7 @@ namespace ExcelRangeToImgForPrint
     {
         static void Main(string[] args)
         {
-            using (var processor = new ImgFilePrint(111, 111111,"1"))
+            var processor = new ImgFilePrint(111, 111111, "1");
             {
                 try
                 {
