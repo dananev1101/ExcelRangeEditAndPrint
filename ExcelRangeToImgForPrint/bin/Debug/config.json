@@ -1,0 +1,13 @@
+{
+    "TemplatesFolder": "templatesExcel",
+    "TempFolder": "tempExcel",
+    "Python": {
+        "ExecutablePath": "C:\\Program Files\\LibreOffice\\program\\python.exe",
+        "ScriptPath": "D:\\test_py\\script_range_to_png.py",
+        "OutputImageFolder": "tempImages",
+        "Parameters": {
+            "SheetIndex": 0,
+            "CellRange": "B1:N73"
+        }
+    }
+}

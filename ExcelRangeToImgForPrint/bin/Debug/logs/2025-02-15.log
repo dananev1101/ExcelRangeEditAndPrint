@@ -1,0 +1,19 @@
+2025-02-15 21:23:54.9902 ERROR Initialization failed System.Configuration.ConfigurationErrorsException: Templates folder not found: templatesExcel
+   в ExcelRangeToImgForPrint.ImgFilePrint.ValidateConfiguration() в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 185
+   в ExcelRangeToImgForPrint.ImgFilePrint..ctor(String numberLabel) в C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\ImgFilePrint.cs:строка 53
+2025-02-15 21:24:38.1665 INFO Processor initialized for label: 1 
+2025-02-15 21:24:38.1871 DEBUG Copied to temp: tempExcel\7867442d-2abf-4530-bf9d-163f415537c4_1.xlsx 
+2025-02-15 21:24:42.6674 DEBUG Python output: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-15 21:24:42.6674 DEBUG Deleted temporary file: tempExcel\7867442d-2abf-4530-bf9d-163f415537c4_1.xlsx 
+2025-02-15 21:24:42.6674 DEBUG Deleted temporary file: tempImages\a397fd89-90d7-4394-9257-69ad90c3183c.png 
+2025-02-15 21:25:14.5475 INFO Processor initialized for label: 1 
+2025-02-15 21:25:14.5738 DEBUG Copied to temp: tempExcel\d5a0a55c-36f2-421a-bb60-5496700f88b0_1.xlsx 
+2025-02-15 21:25:15.2876 DEBUG Python output: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-15 21:25:15.2876 DEBUG Deleted temporary file: tempExcel\d5a0a55c-36f2-421a-bb60-5496700f88b0_1.xlsx 
+2025-02-15 21:25:15.2876 DEBUG Deleted temporary file: tempImages\1c2f5e1c-d9e7-4f72-a252-cdd75a8ef8ce.png 
+2025-02-15 21:29:10.6934 INFO Processor initialized for label: 1 
+2025-02-15 21:29:10.7235 DEBUG Copied to temp: tempExcel\a0163b50-ac12-4637-bcaa-2a78e485a1dc_1.xlsx 
+2025-02-15 21:29:11.6383 DEBUG Python output: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 

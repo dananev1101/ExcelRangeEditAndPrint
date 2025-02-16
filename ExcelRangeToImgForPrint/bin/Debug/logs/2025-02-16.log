@@ -1,0 +1,30 @@
+2025-02-16 16:54:48.8564 INFO Processor initialized for label: 1 
+2025-02-16 16:54:48.8775 DEBUG Copied to temp: tempExcel\4b70bc77-705e-4a76-b6c3-baf23b8423fe_1.xlsx 
+2025-02-16 16:54:49.1068 INFO Starting Excel conversion for: tempExcel\4b70bc77-705e-4a76-b6c3-baf23b8423fe_1.xlsx 
+2025-02-16 16:54:49.6764 INFO Excel conversion completed: tempExcel\efa46f97-8008-4b89-a6c1-2f51d3de0494_converted.xlsx 
+2025-02-16 16:54:50.9808 DEBUG Python output: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 16:56:47.0692 INFO Processor initialized for label: 1 
+2025-02-16 16:56:47.0918 DEBUG Copied to temp: tempExcel\9c2998f4-2864-4923-92e4-d87f96ae350d_1.xlsx 
+2025-02-16 16:56:47.0918 INFO Starting Excel conversion for: tempExcel\9c2998f4-2864-4923-92e4-d87f96ae350d_1.xlsx 
+2025-02-16 16:56:47.5546 INFO Excel conversion completed: tempExcel\d69de0e5-7571-4975-a654-c706d4a5abae_converted.xlsx 
+2025-02-16 16:56:48.3058 DEBUG Python output: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 16:57:22.2765 INFO Processor initialized for label: 1 
+2025-02-16 16:57:22.3041 DEBUG Copied to temp: tempExcel\3ddec0a3-04c0-472e-a221-0acccde14892_1.xlsx 
+2025-02-16 16:57:22.3196 INFO Starting Excel conversion for: tempExcel\3ddec0a3-04c0-472e-a221-0acccde14892_1.xlsx 
+2025-02-16 16:57:22.7627 INFO Excel conversion completed: tempExcel\7d8178f6-cdaf-4c64-b528-221b961f4f50_converted.xlsx 
+2025-02-16 16:57:23.6059 DEBUG Python output: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 16:58:49.8912 INFO Processor initialized for label: 1 
+2025-02-16 16:58:49.9108 DEBUG Copied to temp: tempExcel\f0e87af0-912e-4416-b719-e886a155ab09_1.xlsx 
+2025-02-16 16:58:49.9189 INFO Starting Excel conversion for: tempExcel\f0e87af0-912e-4416-b719-e886a155ab09_1.xlsx 
+2025-02-16 16:58:50.3732 INFO Excel conversion completed: tempExcel\bce302a0-a761-4427-b266-19a4e29e827b_converted.xlsx 
+2025-02-16 16:58:51.0257 DEBUG Python output: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
+2025-02-16 17:06:39.1762 INFO Инициалиация шаблона № 1 
+2025-02-16 17:06:39.2062 DEBUG Скопированно в : tempExcel\27d14ca8-fd64-4fb6-8f4a-fd2259a312ae_1.xlsx 
+2025-02-16 17:06:39.2158 INFO Начало преобразования файла: tempExcel\27d14ca8-fd64-4fb6-8f4a-fd2259a312ae_1.xlsx 
+2025-02-16 17:06:39.6616 INFO Преобразованно успешно. Сохранено в : tempExcel\218cfaa2-d482-428d-9af4-0dd2289b5ffd_converted.xlsx 
+2025-02-16 17:06:40.3041 DEBUG Путь к Python: ╚чюсЁрцхэшх єёях°эю ёючфрэю!
+ 
