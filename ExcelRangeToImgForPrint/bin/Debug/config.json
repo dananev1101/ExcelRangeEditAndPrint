@@ -12,7 +12,7 @@
     },
     "Barcode": {
         "Width": 720,
-        "Height": 100,
+        "Height": 150,
         "Format": "CODE_128",
         "Margin": 0,
         "ShowText": true,

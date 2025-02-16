@@ -288,3 +288,52 @@
 2025-02-16 23:22:57.3303 Info Configuration initialized.
 2025-02-16 23:22:58.7889 Info AppDomain Shutting down. LogFactory closing...
 2025-02-16 23:22:58.8059 Info LogFactory has been closed.
+2025-02-16 23:24:32.2718 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-02-16 23:24:32.2718 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-02-16 23:24:32.2783 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-02-16 23:24:32.2783 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\bin\Debug\NLog.config
+2025-02-16 23:24:32.2984 Info Configuration initialized.
+2025-02-16 23:24:33.6586 Info AppDomain Shutting down. LogFactory closing...
+2025-02-16 23:24:33.6766 Info LogFactory has been closed.
+2025-02-16 23:24:57.7853 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-02-16 23:24:57.7853 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-02-16 23:24:57.7853 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-02-16 23:24:57.8018 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\bin\Debug\NLog.config
+2025-02-16 23:24:57.8116 Info Configuration initialized.
+2025-02-16 23:24:59.1737 Info AppDomain Shutting down. LogFactory closing...
+2025-02-16 23:24:59.1936 Info LogFactory has been closed.
+2025-02-16 23:25:34.6917 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-02-16 23:25:34.6917 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-02-16 23:25:34.7033 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-02-16 23:25:34.7151 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\bin\Debug\NLog.config
+2025-02-16 23:25:34.7151 Info Configuration initialized.
+2025-02-16 23:25:36.2806 Info AppDomain Shutting down. LogFactory closing...
+2025-02-16 23:25:36.3058 Info LogFactory has been closed.
+2025-02-16 23:25:56.8945 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-02-16 23:25:56.8945 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-02-16 23:25:56.9077 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-02-16 23:25:56.9237 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\bin\Debug\NLog.config
+2025-02-16 23:25:56.9392 Info Configuration initialized.
+2025-02-16 23:25:58.2955 Info AppDomain Shutting down. LogFactory closing...
+2025-02-16 23:25:58.3097 Info LogFactory has been closed.
+2025-02-16 23:26:13.8917 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-02-16 23:26:13.8917 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-02-16 23:26:13.8917 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-02-16 23:26:13.9098 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\bin\Debug\NLog.config
+2025-02-16 23:26:13.9194 Info Configuration initialized.
+2025-02-16 23:26:15.4755 Info AppDomain Shutting down. LogFactory closing...
+2025-02-16 23:26:15.4896 Info LogFactory has been closed.
+2025-02-16 23:26:31.6519 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-02-16 23:26:31.6519 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-02-16 23:26:31.6519 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-02-16 23:26:31.6742 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\bin\Debug\NLog.config
+2025-02-16 23:26:31.6837 Info Configuration initialized.
+2025-02-16 23:26:33.2096 Info AppDomain Shutting down. LogFactory closing...
+2025-02-16 23:26:33.2267 Info LogFactory has been closed.
+2025-02-16 23:27:11.4143 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-02-16 23:27:11.4143 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-02-16 23:27:11.4289 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-02-16 23:27:11.4439 Info Validating config: TargetNames=file, console, ConfigItems=22, FilePath=C:\Users\danan\source\repos\ExcelRangeToImgForPrint\ExcelRangeToImgForPrint\bin\Debug\NLog.config
+2025-02-16 23:27:11.4580 Info Configuration initialized.
+2025-02-16 23:27:12.8558 Info AppDomain Shutting down. LogFactory closing...
+2025-02-16 23:27:12.8758 Info LogFactory has been closed.

@@ -173,7 +173,7 @@ namespace ExcelRangeToImgForPrint
                     Width = _barcodeWidth,
                     Height = _barcodeHeight,
                     Margin = 2,
-                    PureBarcode = true
+                    PureBarcode = false
                 }
             };
 
@@ -191,7 +191,7 @@ namespace ExcelRangeToImgForPrint
                 using (var g = Graphics.FromImage(verticalBmp))
                 {
                     g.TranslateTransform(verticalBmp.Width / 2, verticalBmp.Height / 2);
-                    g.RotateTransform(90);
+                    g.RotateTransform(270);
                     g.TranslateTransform(-horizontalBmp.Width / 2, -horizontalBmp.Height / 2);
                     g.DrawImage(horizontalBmp, new Point(0, 0));
                 }
